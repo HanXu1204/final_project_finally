@@ -2,6 +2,7 @@ here::i_am("code/00_clean_data.R")
 absolute_path_to_data <- here::here("data", "Diamonds_Prices2022.csv")
 data <- read.csv(absolute_path_to_data, header = TRUE)
 
+
 library(labelled)
 library(gtsummary)
 

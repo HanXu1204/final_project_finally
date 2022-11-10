@@ -4,6 +4,7 @@ data <- readRDS(
   file = here::here("output/data_clean.rds")
 )
 
+
 library(gtsummary)
 
 table_one <- data |>

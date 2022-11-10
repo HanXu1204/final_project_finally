@@ -20,3 +20,7 @@ output/both_regression_tables.rds: code/03_models.R output/both_regression_table
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f output/*.png && rm -f report_diamond_prize.html 
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(promt=FALSE)"

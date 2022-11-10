@@ -25,4 +25,6 @@
 `report_diamond_prize.Rmd`
 - loads cleaned dataset
 - loads each set of code saved by several `.R` scripts such as table1, scatter plot, regression models and descriptive tables
-- generates the introduction of the dataset and description of the project
+- generates the introduction of the dataset and description of the project!
+
+There are no other changes in this task.
