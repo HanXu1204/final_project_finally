@@ -27,4 +27,11 @@
 - loads each set of code saved by several `.R` scripts such as table1, scatter plot, regression models and descriptive tables
 - generates the introduction of the dataset and description of the project!
 
-There are no other changes in this task.
+
+
+How to synchronize your package repository:
+
+1. In an R console, use `getwd` and `setwd` to confirm that the working directory is the project directory.
+
+2. Use `renv::restore()` to synchronize the project library.
+	- This likely will involve my (automatically) installing packages to the project library.
