@@ -1,4 +1,4 @@
-report_diamond_prize.html: report_diamond_prize.Rmd code/04_render_report.R 
+report_diamond_prize.html: report_diamond_prize.Rmd code/04_render_report.R output/data_clean.rds output/table_one.rds output/scatterplot.png output/both_models.rds output/both_regression_tables.rds
 	Rscript code/04_render_report.R
 
 output/data_clean.rds: code/00_clean_data.R output/data_clean.rds
