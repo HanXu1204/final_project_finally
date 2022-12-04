@@ -1,4 +1,4 @@
-report_diamond_prize.html: report_diamond_prize.Rmd code/04_render_report.R output/data_clean.rds output/table_one.rds output/scatterplot.png output/both_models.rds output/both_regression_tables.rds
+report_diamond_prize.html: report_diamond_prize.Rmd code/04_render_report.R output/data_clean.rds output/table_one.rds output/scatterplot.png 
 	Rscript code/04_render_report.R
 
 output/data_clean.rds: code/00_clean_data.R output/data_clean.rds
@@ -10,11 +10,6 @@ output/table_one.rds: code/01_make_table1.R output/table_one.rds
 output/scatterplot.png: code/02_make_scatter.R output/scatterplot.png
 	Rscript code/02_make_scatter.R
 	
-output/both_models.rds: code/03_models.R output/both_models.rds
-	Rscript code/03_models.R
-
-output/both_regression_tables.rds: code/03_models.R output/both_regression_tables.rds
-	Rscript code/03_models.R
 
 
 .PHONY: clean
@@ -24,3 +19,14 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt=FALSE)"
+	
+	
+projectfiles = report_diamond_prize.Rmd code/04_render_report.R output/data_clean.rds output/table_one.rds output/scatterplot.png 
+
+project_image2: $(projectfiles) $(renvfiles) $(Dockerfile)
+	docker build -t project_image2 .
+	docker tag  project_image2 hanxu1204/project_image2
+	touch $@
+	
+final_report/report_diamond_prize.html:
+	docker run -v "/$$(pwd)"/final_report:/project/final_report hanxu1204/project_image2

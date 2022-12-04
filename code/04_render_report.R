@@ -1,3 +1,7 @@
+install.packages('here')
+install.packages('rmarkdown')
+library(here)
+
 here::i_am("code/04_render_report.R")
 
 

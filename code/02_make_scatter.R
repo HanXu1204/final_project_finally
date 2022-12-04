@@ -1,3 +1,7 @@
+install.packages('here')
+install.packages('ggplot2')
+library(here)
+
 here::i_am("code/02_make_scatter.R")
 
 
