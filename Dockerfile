@@ -8,6 +8,7 @@ RUN apt-get install -y libfontconfig1-dev
 RUN apt-get install -y libnlopt-dev
 
 
+
 RUN mkdir output
 RUN mkdir data
 RUN mkdir code
@@ -23,7 +24,7 @@ RUN mkdir -p renv
 COPY renv/activate.R renv
 COPY renv/settings.dcf renv
 
-RUN Rscript -e "renv::restore(prompt=FALSE)"
+#RUN Rscript -e "renv::restore(prompt=FALSE)"
 RUN mkdir final_report
 
 CMD make && mv report_diamond_prize.html final_report

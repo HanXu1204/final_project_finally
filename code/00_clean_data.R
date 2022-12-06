@@ -1,6 +1,3 @@
-install.packages('here')
-install.packages('labelled')
-install.packages('gtsummary')
 
 library(here)
 library(labelled)

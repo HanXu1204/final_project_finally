@@ -23,10 +23,12 @@ install:
 	
 projectfiles = report_diamond_prize.Rmd code/04_render_report.R output/data_clean.rds output/table_one.rds output/scatterplot.png 
 
-project_image2: $(projectfiles) $(renvfiles) $(Dockerfile)
-	docker build -t project_image2 .
-	docker tag  project_image2 hanxu1204/project_image2
+project_image3: $(projectfiles) $(renvfiles) $(Dockerfile)
+	docker build -t project_image3 .
+	docker tag project_image3 hanxu1204/project_image3
 	touch $@
 	
 final_report/report_diamond_prize.html:
-	docker run -v "/$$(pwd)"/final_report:/project/final_report hanxu1204/project_image2
+	docker run -v "/$$(pwd)/final_report":/project/final_report hanxu1204/project_image3
+	
+	

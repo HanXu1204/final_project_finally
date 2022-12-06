@@ -1,5 +1,3 @@
-install.packages('here')
-install.packages('gtsummary')
 library(here)
 here::i_am("code/01_make_table1.R")
 
@@ -7,8 +5,7 @@ data <- readRDS(
   file = here::here("output/data_clean.rds")
 )
 
-install.packages("car")
-install.packages("carData")
+
 library(car)
 library(carData)
 library(gtsummary)
