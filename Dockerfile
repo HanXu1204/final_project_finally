@@ -24,7 +24,7 @@ COPY Makefile .
 COPY report_diamond_prize.Rmd .
 
 COPY README.md .
-#COPY .Rprofile .
+COPY .Rprofile .
 COPY renv.lock .
 RUN mkdir -p renv
 COPY renv/activate.R renv
