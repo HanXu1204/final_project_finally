@@ -14,6 +14,7 @@ RUN Rscript -e "install.packages('gtsummary')"
 RUN Rscript -e "install.packages('ggplot2')"
 RUN Rscript -e "install.packages('rmarkdown')"
 RUN Rscript -e "install.packages('dplyr')"
+RUN Rscript -e "install.packages('car')"
 
 RUN mkdir output
 RUN mkdir data
@@ -24,13 +25,6 @@ COPY Makefile .
 COPY report_diamond_prize.Rmd .
 
 COPY README.md .
-COPY .Rprofile .
-COPY renv.lock .
-RUN mkdir -p renv
-COPY renv/activate.R renv
-COPY renv/settings.dcf renv
-
-#RUN Rscript -e "renv::restore(prompt=FALSE)"
 RUN mkdir final_report
 
-CMD make && mv report_diamond_prize.html final_report
+CMD make && mv report_diamond_prize.html /project/final_report
