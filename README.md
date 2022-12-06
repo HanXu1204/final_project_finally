@@ -15,12 +15,6 @@
 - generates a scatter plot for `carat` and`price_cat` to observe the relationship primarily
 - saves the scatter plot as a `.rds` object in `output/` folder
 
-`code/03_models.R`
-- reads cleaned dataset saved by `code/00_clean_data.R`
-- investigates the generalized linear regression model to explore the association between `price` and `cut`, `carat`, and `table`.
-- investigates the logistic linear regression model to explore the association between `price_cat` and `cut`, `color`, and `clarity`.
-- creates descriptive tables for regression models mentioned above including test statistics and p-values.
-- saves regression models and descriptive tables as a `.rds` object in `output/` folder
 
 `report_diamond_prize.Rmd`
 - loads cleaned dataset
@@ -37,4 +31,8 @@ How to synchronize your package repository:
 	- This likely will involve my (automatically) installing packages to the project library.
 	
 	
+Makefile description:
 
+make clean: remove files
+make install: install packages needed in the project
+make final_report/report_diamond_prize.html: run the docker image hanxu1204/project_image3
